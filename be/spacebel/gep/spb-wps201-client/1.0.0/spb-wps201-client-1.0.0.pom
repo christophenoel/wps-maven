@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <!-- $Id$ -->
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>be.spacebel.gep</groupId>
+  <artifactId>spb-wps201-client</artifactId>
+  <packaging>jar</packaging>
+  <name>Spacebel WPS 2.0 Client Library</name>
+  <version>1.0.0</version>
+  <description>Client used to invoke WPS 2.0 Transactional server</description>
+  <url>https://github.com/spacebel/data-manager</url>
+  <inceptionYear>2015</inceptionYear>
+  <licenses>
+    <license>
+      <name>GNU GENERAL PUBLIC LICENSE, version 3</name>
+      <url>https://www.gnu.org/licenses/gpl.txt</url>
+      <distribution>repo</distribution>
+      <comments>A business-friendly OSS license</comments>
+    </license>
+  </licenses>
+  <organization>
+    <name>Spacebel</name>
+    <url>http://www.spacebel.be</url>
+  </organization>
+  <developers>
+    <developer>
+      <id>cnl</id>
+      <name>Christophe Noel</name>
+      <organization>Spacebel</organization>
+    </developer>
+    <developer>
+      <id>mng</id>
+      <name>Minh Nguyen Quang</name>
+      <organization>Spacebel</organization>
+    </developer>
+
+  </developers>
+  <dependencies>
+        
+    <dependency>
+      <groupId>org.n52.sensorweb</groupId>
+      <artifactId>52n-xml-wps-v100</artifactId>
+      <version>2.2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.n52.wps</groupId>
+      <artifactId>52n-xml-wps-t-v201</artifactId>
+      <version>2.2.0</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>4.5.6</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>xmlbeans</artifactId>
+      <groupId>org.apache.xmlbeans</groupId>
+      <version>2.6.0</version>
+    </dependency>
+    <dependency>
+      <artifactId>52n-xml-ows-v110</artifactId>
+      <groupId>org.n52.sensorweb</groupId>
+      <version>2.2.0</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>1.11</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.6</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.codehaus.woodstox/wstx-lgpl -->
+    <dependency>
+      <groupId>org.codehaus.woodstox</groupId>
+      <artifactId>wstx-lgpl</artifactId>
+      <version>4.0.6</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.json/json -->
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20180813</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/net.java.dev.stax-utils/stax-utils -->
+    <dependency>
+      <groupId>net.java.dev.stax-utils</groupId>
+      <artifactId>stax-utils</artifactId>
+      <version>20060502</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>jsr173-ri</artifactId>
+          <groupId>com.bea.xml</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+      
+
+    <dependency>
+      <groupId>xalan</groupId>
+      <artifactId>xalan</artifactId>
+      <version>2.7.1</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>xml-apis</artifactId>
+          <groupId>xml-apis</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>1.7.25</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <profiles>
+    <profile>
+      <id>update-licenses</id>
+      <build>
+        
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>license-maven-plugin</artifactId>
+            <version>1.13</version>
+            <inherited>true</inherited>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>add-third-party</goal>
+                  <goal>aggregate-add-third-party</goal>
+                  <!--
+                  <goal>aggregate-download-licenses</goal>
+                  -->
+                  <goal>update-project-license</goal>
+                </goals>
+                <configuration>
+                  <inceptionYear>2015</inceptionYear>
+                  <organizationName>Spacebel</organizationName>
+                  <licenseName>apache_v2</licenseName>
+                  <outputDirectory>${project.basedir}</outputDirectory>
+                  <useMissingFile>true</useMissingFile>
+                  <licensesOutputDirectory>${project.basedir}/licenses</licensesOutputDirectory>
+                  <licensesOutputFile>${project.basedir}/licenses/licenses.xml</licensesOutputFile>
+                  <licenseMerges>
+                    <licenseMerge>Apache 2.0|Apache Software License - Version 2.0|The Apache Software License, Version 2.0|Apache License, Version 2.0|apache_v2</licenseMerge>
+                    <licenseMerge>CDDL 1.0|COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0|Common Development and Distribution License (CDDL) v1.0|cddl_v1</licenseMerge>
+                    <licenseMerge>LGPL 2.1|LGPL, version 2.1|GNU Library or Lesser General Public License (LGPL) V2.1|GNU Lesser General Public License (LGPL), Version 2.1|GNU Lesser General Public License, Version 2.1|LGPL 2.1</licenseMerge>
+                    <licenseMerge>GNU LGPL 3|GNU LESSER GENERAL PUBLIC LICENSE, Version 3|GNU Lesser General Public Licence|GNU Lesser General Public License|GNU LESSER GENERAL PUBLIC LICENSE</licenseMerge>
+                    <licenseMerge>GPL|GPL2 w/ CPE|GPLv2+CE|GNU General Public Library</licenseMerge>
+                    <licenseMerge>Dual license: CDDL 1.0 and GPL v2|Dual license consisting of the CDDL v1.0 and GPL v2|CDDL+GPLv2|CDDL+GPL|CDDL+GPL License</licenseMerge>
+                    <licenseMerge>Dual license: CDDL 1.1 and GPL v2|Dual license consisting of the CDDL v1.1 and GPL v2|CDDL1_1+GPLv2</licenseMerge>
+                    <licenseMerge>Dual License: CDDL 1.0 and GPL V2 with Classpath Exception|CDDL + GPLv2 with classpath exception</licenseMerge>
+                    <licenseMerge>MIT|MIT License|The MIT License</licenseMerge>
+                    <licenseMerge>BSD-2-Clause|The BSD 2-Clause License|The BSD License|Modified BSD License|New BSD License|New BSD license|Two-clause BSD-style license|BSD licence|BSD New|The New BSD License|BSD 2-Clause|BSD 2-clause|BSD</licenseMerge>
+                    <licenseMerge>BSD-3-Clause|The BSD 3-Clause License|BSD 3-Clause|BSD 3-clause</licenseMerge>
+                    <licenseMerge>EPL|Eclipse Public License - Version 1.0</licenseMerge>
+                    <licenseMerge>MPL|MPL 1.1</licenseMerge>
+                    <licenseMerge>Public Domain</licenseMerge>
+                    <licenseMerge>Common Public License|Common Public License Version 1.0</licenseMerge>
+                    <licenseMerge>CC0|CC0 1.0 Universal|Public Domain, per Creative Commons CC0</licenseMerge>
+                    <licenseMerge>Unknown License|Unknown license</licenseMerge>        
+                  </licenseMerges>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+       
+        </plugins>
+        
+      </build>
+    </profile>
+  </profiles>
+</project>
