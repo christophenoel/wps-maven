@@ -3,10 +3,11 @@
   <groupId>org.n52.sensorweb</groupId>
   <artifactId>52n-xml-wps-v100</artifactId>
   <versioning>
-    <release>2.2.0</release>
+    <release>spb.1.0.0</release>
     <versions>
       <version>2.2.0</version>
+      <version>spb.1.0.0</version>
     </versions>
-    <lastUpdated>20181129104735</lastUpdated>
+    <lastUpdated>20181129112046</lastUpdated>
   </versioning>
 </metadata>
