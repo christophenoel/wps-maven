@@ -35,13 +35,20 @@
     </developer>
 
   </developers>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>2.8.2</version>
+        <configuration>
+          <altDeploymentRepository>internal.repo::default::file://D:/env/maven-shared/wps-maven</altDeploymentRepository>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
   <dependencies>
         
-    <dependency>
-      <groupId>org.n52.sensorweb</groupId>
-      <artifactId>52n-xml-wps-v100</artifactId>
-      <version>2.2.0</version>
-    </dependency>
+   
     <dependency>
       <groupId>org.n52.wps</groupId>
       <artifactId>52n-xml-wps-t-v201</artifactId>
@@ -60,11 +67,7 @@
       <groupId>org.apache.xmlbeans</groupId>
       <version>2.6.0</version>
     </dependency>
-    <dependency>
-      <artifactId>52n-xml-ows-v110</artifactId>
-      <groupId>org.n52.sensorweb</groupId>
-      <version>2.2.0</version>
-    </dependency>
+   
     <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
     <dependency>
       <groupId>commons-codec</groupId>
@@ -185,4 +188,5 @@
       </build>
     </profile>
   </profiles>
+  
 </project>
